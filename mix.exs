@@ -15,7 +15,6 @@ defmodule Cards.MixProject do
       homepage_url: "https://github.com/HenriqueArtur/elixir_cards",
       docs: [
         main: "Cards", # The main page in the docs
-        logo: "path/to/logo.png",
         extras: ["README.md"]
       ]
     ]
