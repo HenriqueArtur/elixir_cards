@@ -31,7 +31,7 @@ defmodule Cards do
     ]
 
     for suit <- suits, value <- values do
-      "#{suit} of #{value}"
+      "#{value} of #{suit}"
     end
   end
 
@@ -39,6 +39,16 @@ defmodule Cards do
     Enum.shuffle(deck)
   end
 
+  @doc """
+  Determine whether a deck contains a given card
+
+  ## Examples
+
+      iex> deck = Cards.create_deck
+      iex> Cards.contains?(deck, "Ace of Spades")
+      true
+
+  """
   def contains?(deck, card) do
     Enum.member?(deck, card)
   end
@@ -50,7 +60,7 @@ defmodule Cards do
   ## Examples
 
       iex> deck = Cards.create_deck
-      iex> {hand, deck} = Cards.deal(deck)
+      iex> {hand, _deck} = Cards.deal(deck, 1)
       iex> hand
       ["Ace of Spades"]
       
